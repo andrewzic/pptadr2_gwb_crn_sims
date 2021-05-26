@@ -1,0 +1,20 @@
+#!/usr/bin//tcsh
+unalias rm
+unalias mv
+unalias cp
+rm /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/runStat
+set dte = `date`
+echo "Processing start: $dte" > /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/runStat
+source /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/runScripts_proc_0 &
+set endit=0
+while ($endit =~ "0")
+ set nf = `grep Complete /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/runStat | wc -l | tail -1`
+  if ($nf =~ 1) then
+   set endit=1
+  else
+   echo "master script for all_similar_common sleeping 1 second (processed $nf realisations)"
+   sleep 1
+  endif
+end
+set dte = `date`
+echo "Processing complete: $dte" >> /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/runStat

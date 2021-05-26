@@ -1,0 +1,322 @@
+#!/usr/bin//tcsh
+echo 'Processing realisation 0'
+set host = `hostname`
+set usr = `whoami`
+set dte = `date`
+set pid = `echo $$`
+echo "[$dte] [$host] [$usr] [$pid] Processing realisation 0" >> /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/runStat
+cd /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/workFiles/real_0
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J0437-4715.par.sim J0437-4715.itim
+tempo2 -output add_pulseNumber -f J0437-4715.par.sim J0437-4715.itim.sim
+mv withpn.tim J0437-4715.sim
+tempo2 -gr createRealisation -f J0437-4715.sim -corr J0437-4715.addGauss -corr J0437-4715.addOutliers -corr J0437-4715.tnoise.0 -corr J0437-4715.addGW.0
+mv J0437-4715.sim.real J0437-4715.tim
+cp J0437-4715.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J0437-4715.par J0437-4715.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J0437-4715.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J0613-0200.par.sim J0613-0200.itim
+tempo2 -output add_pulseNumber -f J0613-0200.par.sim J0613-0200.itim.sim
+mv withpn.tim J0613-0200.sim
+tempo2 -gr createRealisation -f J0613-0200.sim -corr J0613-0200.addGauss -corr J0613-0200.addOutliers -corr J0613-0200.tnoise.1 -corr J0613-0200.addGW.0
+mv J0613-0200.sim.real J0613-0200.tim
+cp J0613-0200.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J0613-0200.par J0613-0200.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J0613-0200.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J0711-6830.par.sim J0711-6830.itim
+tempo2 -output add_pulseNumber -f J0711-6830.par.sim J0711-6830.itim.sim
+mv withpn.tim J0711-6830.sim
+tempo2 -gr createRealisation -f J0711-6830.sim -corr J0711-6830.addGauss -corr J0711-6830.addOutliers -corr J0711-6830.tnoise.2 -corr J0711-6830.addGW.0
+mv J0711-6830.sim.real J0711-6830.tim
+cp J0711-6830.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J0711-6830.par J0711-6830.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J0711-6830.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1017-7156.par.sim J1017-7156.itim
+tempo2 -output add_pulseNumber -f J1017-7156.par.sim J1017-7156.itim.sim
+mv withpn.tim J1017-7156.sim
+tempo2 -gr createRealisation -f J1017-7156.sim -corr J1017-7156.addGauss -corr J1017-7156.addOutliers -corr J1017-7156.tnoise.3 -corr J1017-7156.addGW.0
+mv J1017-7156.sim.real J1017-7156.tim
+cp J1017-7156.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1017-7156.par J1017-7156.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1017-7156.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1022+1001.par.sim J1022+1001.itim
+tempo2 -output add_pulseNumber -f J1022+1001.par.sim J1022+1001.itim.sim
+mv withpn.tim J1022+1001.sim
+tempo2 -gr createRealisation -f J1022+1001.sim -corr J1022+1001.addGauss -corr J1022+1001.addOutliers -corr J1022+1001.tnoise.4 -corr J1022+1001.addGW.0
+mv J1022+1001.sim.real J1022+1001.tim
+cp J1022+1001.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1022+1001.par J1022+1001.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1022+1001.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1024-0719.par.sim J1024-0719.itim
+tempo2 -output add_pulseNumber -f J1024-0719.par.sim J1024-0719.itim.sim
+mv withpn.tim J1024-0719.sim
+tempo2 -gr createRealisation -f J1024-0719.sim -corr J1024-0719.addGauss -corr J1024-0719.addOutliers -corr J1024-0719.tnoise.5 -corr J1024-0719.addGW.0
+mv J1024-0719.sim.real J1024-0719.tim
+cp J1024-0719.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1024-0719.par J1024-0719.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1024-0719.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1045-4509.par.sim J1045-4509.itim
+tempo2 -output add_pulseNumber -f J1045-4509.par.sim J1045-4509.itim.sim
+mv withpn.tim J1045-4509.sim
+tempo2 -gr createRealisation -f J1045-4509.sim -corr J1045-4509.addGauss -corr J1045-4509.addOutliers -corr J1045-4509.tnoise.6 -corr J1045-4509.addGW.0
+mv J1045-4509.sim.real J1045-4509.tim
+cp J1045-4509.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1045-4509.par J1045-4509.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1045-4509.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1125-6014.par.sim J1125-6014.itim
+tempo2 -output add_pulseNumber -f J1125-6014.par.sim J1125-6014.itim.sim
+mv withpn.tim J1125-6014.sim
+tempo2 -gr createRealisation -f J1125-6014.sim -corr J1125-6014.addGauss -corr J1125-6014.addOutliers -corr J1125-6014.tnoise.7 -corr J1125-6014.addGW.0
+mv J1125-6014.sim.real J1125-6014.tim
+cp J1125-6014.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1125-6014.par J1125-6014.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1125-6014.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1446-4701.par.sim J1446-4701.itim
+tempo2 -output add_pulseNumber -f J1446-4701.par.sim J1446-4701.itim.sim
+mv withpn.tim J1446-4701.sim
+tempo2 -gr createRealisation -f J1446-4701.sim -corr J1446-4701.addGauss -corr J1446-4701.addOutliers -corr J1446-4701.tnoise.8 -corr J1446-4701.addGW.0
+mv J1446-4701.sim.real J1446-4701.tim
+cp J1446-4701.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1446-4701.par J1446-4701.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1446-4701.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1545-4550.par.sim J1545-4550.itim
+tempo2 -output add_pulseNumber -f J1545-4550.par.sim J1545-4550.itim.sim
+mv withpn.tim J1545-4550.sim
+tempo2 -gr createRealisation -f J1545-4550.sim -corr J1545-4550.addGauss -corr J1545-4550.addOutliers -corr J1545-4550.tnoise.9 -corr J1545-4550.addGW.0
+mv J1545-4550.sim.real J1545-4550.tim
+cp J1545-4550.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1545-4550.par J1545-4550.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1545-4550.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1600-3053.par.sim J1600-3053.itim
+tempo2 -output add_pulseNumber -f J1600-3053.par.sim J1600-3053.itim.sim
+mv withpn.tim J1600-3053.sim
+tempo2 -gr createRealisation -f J1600-3053.sim -corr J1600-3053.addGauss -corr J1600-3053.addOutliers -corr J1600-3053.tnoise.10 -corr J1600-3053.addGW.0
+mv J1600-3053.sim.real J1600-3053.tim
+cp J1600-3053.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1600-3053.par J1600-3053.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1600-3053.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1603-7202.par.sim J1603-7202.itim
+tempo2 -output add_pulseNumber -f J1603-7202.par.sim J1603-7202.itim.sim
+mv withpn.tim J1603-7202.sim
+tempo2 -gr createRealisation -f J1603-7202.sim -corr J1603-7202.addGauss -corr J1603-7202.addOutliers -corr J1603-7202.tnoise.11 -corr J1603-7202.addGW.0
+mv J1603-7202.sim.real J1603-7202.tim
+cp J1603-7202.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1603-7202.par J1603-7202.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1603-7202.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1643-1224.par.sim J1643-1224.itim
+tempo2 -output add_pulseNumber -f J1643-1224.par.sim J1643-1224.itim.sim
+mv withpn.tim J1643-1224.sim
+tempo2 -gr createRealisation -f J1643-1224.sim -corr J1643-1224.addGauss -corr J1643-1224.addOutliers -corr J1643-1224.tnoise.12 -corr J1643-1224.addGW.0
+mv J1643-1224.sim.real J1643-1224.tim
+cp J1643-1224.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1643-1224.par J1643-1224.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1643-1224.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1713+0747.par.sim J1713+0747.itim
+tempo2 -output add_pulseNumber -f J1713+0747.par.sim J1713+0747.itim.sim
+mv withpn.tim J1713+0747.sim
+tempo2 -gr createRealisation -f J1713+0747.sim -corr J1713+0747.addGauss -corr J1713+0747.addOutliers -corr J1713+0747.tnoise.13 -corr J1713+0747.addGW.0
+mv J1713+0747.sim.real J1713+0747.tim
+cp J1713+0747.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1713+0747.par J1713+0747.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1713+0747.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1730-2304.par.sim J1730-2304.itim
+tempo2 -output add_pulseNumber -f J1730-2304.par.sim J1730-2304.itim.sim
+mv withpn.tim J1730-2304.sim
+tempo2 -gr createRealisation -f J1730-2304.sim -corr J1730-2304.addGauss -corr J1730-2304.addOutliers -corr J1730-2304.tnoise.14 -corr J1730-2304.addGW.0
+mv J1730-2304.sim.real J1730-2304.tim
+cp J1730-2304.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1730-2304.par J1730-2304.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1730-2304.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1732-5049.par.sim J1732-5049.itim
+tempo2 -output add_pulseNumber -f J1732-5049.par.sim J1732-5049.itim.sim
+mv withpn.tim J1732-5049.sim
+tempo2 -gr createRealisation -f J1732-5049.sim -corr J1732-5049.addGauss -corr J1732-5049.addOutliers -corr J1732-5049.tnoise.15 -corr J1732-5049.addGW.0
+mv J1732-5049.sim.real J1732-5049.tim
+cp J1732-5049.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1732-5049.par J1732-5049.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1732-5049.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1744-1134.par.sim J1744-1134.itim
+tempo2 -output add_pulseNumber -f J1744-1134.par.sim J1744-1134.itim.sim
+mv withpn.tim J1744-1134.sim
+tempo2 -gr createRealisation -f J1744-1134.sim -corr J1744-1134.addGauss -corr J1744-1134.addOutliers -corr J1744-1134.tnoise.16 -corr J1744-1134.addGW.0
+mv J1744-1134.sim.real J1744-1134.tim
+cp J1744-1134.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1744-1134.par J1744-1134.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1744-1134.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1824-2452A.par.sim J1824-2452A.itim
+tempo2 -output add_pulseNumber -f J1824-2452A.par.sim J1824-2452A.itim.sim
+mv withpn.tim J1824-2452A.sim
+tempo2 -gr createRealisation -f J1824-2452A.sim -corr J1824-2452A.addGauss -corr J1824-2452A.addOutliers -corr J1824-2452A.tnoise.17 -corr J1824-2452A.addGW.0
+mv J1824-2452A.sim.real J1824-2452A.tim
+cp J1824-2452A.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1824-2452A.par J1824-2452A.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1824-2452A.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1832-0836.par.sim J1832-0836.itim
+tempo2 -output add_pulseNumber -f J1832-0836.par.sim J1832-0836.itim.sim
+mv withpn.tim J1832-0836.sim
+tempo2 -gr createRealisation -f J1832-0836.sim -corr J1832-0836.addGauss -corr J1832-0836.addOutliers -corr J1832-0836.tnoise.18 -corr J1832-0836.addGW.0
+mv J1832-0836.sim.real J1832-0836.tim
+cp J1832-0836.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1832-0836.par J1832-0836.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1832-0836.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1857+0943.par.sim J1857+0943.itim
+tempo2 -output add_pulseNumber -f J1857+0943.par.sim J1857+0943.itim.sim
+mv withpn.tim J1857+0943.sim
+tempo2 -gr createRealisation -f J1857+0943.sim -corr J1857+0943.addGauss -corr J1857+0943.addOutliers -corr J1857+0943.tnoise.19 -corr J1857+0943.addGW.0
+mv J1857+0943.sim.real J1857+0943.tim
+cp J1857+0943.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1857+0943.par J1857+0943.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1857+0943.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1909-3744.par.sim J1909-3744.itim
+tempo2 -output add_pulseNumber -f J1909-3744.par.sim J1909-3744.itim.sim
+mv withpn.tim J1909-3744.sim
+tempo2 -gr createRealisation -f J1909-3744.sim -corr J1909-3744.addGauss -corr J1909-3744.addOutliers -corr J1909-3744.tnoise.20 -corr J1909-3744.addGW.0
+mv J1909-3744.sim.real J1909-3744.tim
+cp J1909-3744.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1909-3744.par J1909-3744.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1909-3744.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J1939+2134.par.sim J1939+2134.itim
+tempo2 -output add_pulseNumber -f J1939+2134.par.sim J1939+2134.itim.sim
+mv withpn.tim J1939+2134.sim
+tempo2 -gr createRealisation -f J1939+2134.sim -corr J1939+2134.addGauss -corr J1939+2134.addOutliers -corr J1939+2134.tnoise.21 -corr J1939+2134.addGW.0
+mv J1939+2134.sim.real J1939+2134.tim
+cp J1939+2134.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J1939+2134.par J1939+2134.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J1939+2134.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J2124-3358.par.sim J2124-3358.itim
+tempo2 -output add_pulseNumber -f J2124-3358.par.sim J2124-3358.itim.sim
+mv withpn.tim J2124-3358.sim
+tempo2 -gr createRealisation -f J2124-3358.sim -corr J2124-3358.addGauss -corr J2124-3358.addOutliers -corr J2124-3358.tnoise.22 -corr J2124-3358.addGW.0
+mv J2124-3358.sim.real J2124-3358.tim
+cp J2124-3358.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J2124-3358.par J2124-3358.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J2124-3358.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J2129-5721.par.sim J2129-5721.itim
+tempo2 -output add_pulseNumber -f J2129-5721.par.sim J2129-5721.itim.sim
+mv withpn.tim J2129-5721.sim
+tempo2 -gr createRealisation -f J2129-5721.sim -corr J2129-5721.addGauss -corr J2129-5721.addOutliers -corr J2129-5721.tnoise.23 -corr J2129-5721.addGW.0
+mv J2129-5721.sim.real J2129-5721.tim
+cp J2129-5721.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J2129-5721.par J2129-5721.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J2129-5721.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J2145-0750.par.sim J2145-0750.itim
+tempo2 -output add_pulseNumber -f J2145-0750.par.sim J2145-0750.itim.sim
+mv withpn.tim J2145-0750.sim
+tempo2 -gr createRealisation -f J2145-0750.sim -corr J2145-0750.addGauss -corr J2145-0750.addOutliers -corr J2145-0750.tnoise.24 -corr J2145-0750.addGW.0
+mv J2145-0750.sim.real J2145-0750.tim
+cp J2145-0750.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J2145-0750.par J2145-0750.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J2145-0750.par
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
+tempo2 -gr formIdeal -f J2241-5236.par.sim J2241-5236.itim
+tempo2 -output add_pulseNumber -f J2241-5236.par.sim J2241-5236.itim.sim
+mv withpn.tim J2241-5236.sim
+tempo2 -gr createRealisation -f J2241-5236.sim -corr J2241-5236.addGauss -corr J2241-5236.addOutliers -corr J2241-5236.tnoise.25 -corr J2241-5236.addGW.0
+mv J2241-5236.sim.real J2241-5236.tim
+cp J2241-5236.tim /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/.
+tempo2 -f J2241-5236.par J2241-5236.tim -newpar
+cp new.par /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/output/real_0/J2241-5236.par
+set dte = `date`
+echo "[$dte] [$host] [$usr] [$pid] Complete processing realisation 0" >> /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/runStat

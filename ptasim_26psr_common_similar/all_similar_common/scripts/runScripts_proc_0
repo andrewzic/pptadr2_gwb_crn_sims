@@ -1,0 +1,6 @@
+#!/usr/bin//tcsh
+source /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/process_real_0
+if (-e /DATA/CETUS_3/zic006/ssb/ptasim/pptadr2_gwb_crn_sims/ptasim_26psr_common_similar/all_similar_common/scripts/status/stopScript) then
+ echo 'Stopping as stopScript exists'
+ exit
+endif
