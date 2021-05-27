@@ -21,4 +21,7 @@ singularity exec /home/zic006/psr_gwb.sif which python3
 singularity exec /home/zic006/psr_gwb.sif echo $TEMPO2
 singularity exec /home/zic006/psr_gwb.sif echo $TEMPO2_CLOCK_DIR
 
-singularity exec /home/zic006/psr_gwb.sif python3 /flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/run_analysis.py --prfile "/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/params/params_all_mc_array_spin_v_spincommon_20210524_r"$SLURM_ARRAY_TASK_ID".dat"
+echo $SLURM_ARRAY_TASK_ID
+
+echo "/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/params/params_all_mc_array_spin_v_spincommon_20210524_r"$SLURM_ARRAY_TASK_ID".dat"
+singularity exec /home/zic006/psr_gwb.sif python3 /flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/run_enterprise_simple.py --prfile "/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/params/params_all_mc_array_spin_v_spincommon_20210524_r"$SLURM_ARRAY_TASK_ID".dat"
