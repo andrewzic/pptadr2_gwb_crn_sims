@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 psr_list = np.loadtxt('psrs.dat', dtype = 'str')
 
@@ -13,13 +14,13 @@ ptasim_inp_template_str = ptasim_inp_template_f.read()
 
 #print(ptasim_inp_template.format('test', 'ts', '2ff'))
 
-N = [0, 1, 2, 3]
+N = [0, 1, 10, 11, 2, 3]
 
-alpha_uppers = [-4, -3, -2, -1]
-alpha_lowers = [-4, -5, -6, -7]
+alpha_uppers = [-4, -3, -2.8, -2.4, -2, -1]
+alpha_lowers = [-4, -5, -5.2, -5.6, -6, -7]
 
-p0_uppers = [-23, -22, -21, -20]
-p0_lowers = [-23, -24, -25, -26]
+p0_uppers = [-23, -22, -21.8, -21.5, -21, -20]
+p0_lowers = [-23, -24, -24.2, -24.5, -25, -26]
 
 for ind, alpha_upper, alpha_lower, p0_upper, p0_lower in zip(N, alpha_uppers, alpha_lowers, p0_uppers, p0_lowers):
     alphas = np.random.uniform(alpha_lower, alpha_upper, size = N_psr)
@@ -40,15 +41,17 @@ for ind, alpha_upper, alpha_lower, p0_upper, p0_lower in zip(N, alpha_uppers, al
         str_obs += fmt_str_obs.format(psr, toaerr)
         #print(fmt_str_obs.format(psr, toaerr))
 
-    with open('ptasim_all_similar_26_{}.inp'.format(ind), 'w') as ptasim_inp_f:
-        ptasim_inp_f.write(ptasim_inp_template_str.format(ind, str_tnoise, str_obs))
-        ptasim_inp_f.close()
+    
+    if not os.path.exists('ptasim_all_similar_26_{}.inp'.format(ind)):
+        with open('ptasim_all_similar_26_{}.inp'.format(ind), 'w') as ptasim_inp_f:
+            ptasim_inp_f.write(ptasim_inp_template_str.format(ind, str_tnoise, str_obs))
+            ptasim_inp_f.close()
         
-    with open('psr_noise_vals_{}.dat'.format(ind), 'w') as psr_datf:
-        for alpha, p0, toaerr in zip(alphas, p0s, toaerrs):
-            psr_datf.write(fmt_str_dat.format(alpha, p0, toaerr))
+        with open('psr_noise_vals_{}.dat'.format(ind), 'w') as psr_datf:
+            for alpha, p0, toaerr in zip(alphas, p0s, toaerrs):
+                psr_datf.write(fmt_str_dat.format(alpha, p0, toaerr))
 
-        psr_datf.close()
+            psr_datf.close()
 
 #plt.scatter(alphas, p0s)
 
