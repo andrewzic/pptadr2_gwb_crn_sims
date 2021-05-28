@@ -1,5 +1,5 @@
-paramfile_label: 20210524_0
-datadir: /flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/all_similar_regsamp/output/real_0/
+paramfile_label: 20210524_6
+datadir: /flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/all_similar_regsamp/output/real_6/
 out: /flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/enterprise_out/all_pe_array_spin_20210524/
 overwrite: False
 array_analysis: True
