@@ -23,5 +23,5 @@ singularity exec /home/zic006/psr_gwb.sif echo $TEMPO2_CLOCK_DIR
 
 echo $SLURM_ARRAY_TASK_ID
 
-echo "/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/params/params_all_mc_array_spin_v_spincommon_N"${$SLURM_ARRAY_TASK_ID}"_20210524.dat"
-singularity exec /home/zic006/psr_gwb.sif python3 /flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/run_enterprise_simple.py --prfile "/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/params/params_all_mc_array_spin_v_spincommon_N"${$SLURM_ARRAY_TASK_ID}"_20210524.dat"
+echo "/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/params/params_all_mc_array_spin_v_spincommon_N"${SLURM_ARRAY_TASK_ID}"_20210524.dat"
+singularity exec /home/zic006/psr_gwb.sif python3 /flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/run_enterprise_simple.py --prfile "/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/params/params_all_mc_array_spin_v_spincommon_N"${SLURM_ARRAY_TASK_ID}"_20210524.dat"
