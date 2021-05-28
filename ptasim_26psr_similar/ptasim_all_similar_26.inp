@@ -1,7 +1,7 @@
 <define>
-name: all_similar_regsamp
-nproc: 10
-nreal: 10
+name: all_similar_regsamp_extra
+nproc: 2
+nreal: 2
 </define>
 
 <pulsars>
