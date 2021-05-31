@@ -1,0 +1,28 @@
+<define>
+name: all-1_common_regsamp_J1713
+nproc: 10
+nreal: 10
+</define>
+
+<pulsars>
+psr: name=J1713+0747  
+</pulsars>
+
+<add>
+tnoise: psr=J1713+0747,alpha=-1.5,p0=1.5e-28,fc=0.01
+</add>
+
+
+<obsRun>
+name: pks
+tel: pks
+start: 51000
+finish: 58325
+sampling: cadence=40
+sched: sched_all-1_common_regsamp
+</obsRun>
+
+<schedule>
+name: sched_all-1_common_regsamp
+observe: psr=J1713+0747,toaerr=7e-8,freq=1400
+</schedule>

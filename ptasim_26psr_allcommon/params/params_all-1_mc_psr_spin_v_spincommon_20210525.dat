@@ -1,0 +1,18 @@
+paramfile_label: 20210525
+datadir: /DATA/CETUS_3/zic006/ssb/ptasim/ptasim_26psr_allcommon/all-1_common_regsamp/timfiles/
+out: /DATA/CETUS_3/zic006/ssb/ptasim/ptasim_26psr_allcommon/enterprise_out/all-1_mc_psr_spin_v_spincommon_20210525/
+overwrite: True
+array_analysis: False
+ssephem: DE421
+sampler: ptmcmcsampler
+SCAMweight: 30
+AMweight: 15
+DEweight: 50
+nsamp: 1000000
+efac: -1
+equad: -1
+noisefiles: /DATA/CETUS_3/zic006/ssb/ptasim/ptasim_26psr_allcommon/noisefiles/
+{0}
+noise_model_file: /DATA/CETUS_3/zic006/ssb/ptasim/ptasim_26psr_allcommon/noisemodels/spin_noise.json
+{1}
+noise_model_file: /DATA/CETUS_3/zic006/ssb/ptasim/ptasim_26psr_allcommon/noisemodels/spin_common_noise.json
