@@ -1,11 +1,14 @@
 import numpy as np
+import sys
+
+fname = sys.argv[1]
 
 template_str = """MODEL 1
 ALPHA {:.2f}
 FC 0.01
 AMP {:.2e}"""
 
-fname = "psr_noise_vals.dat"
+
 with open(fname, 'r') as f:
     with open("psrs.dat", 'r') as psr_f:
         lines = f.readlines()
