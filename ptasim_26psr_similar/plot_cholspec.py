@@ -25,12 +25,14 @@ for specf in spec_files:
     psd = spec[:, 1]
     plt.plot(freq, psd, label = os.path.splitext(os.path.basename(specf))[0])
 
-ax1.legend()
+#ax1.legend()
 
 ax1.set_xscale('log')
 ax1.set_yscale('log')
 ax1.set_xlabel(r'Frequency (day$^{{-1}}$)')
 ax1.set_ylabel('PSD')
+
+#ax1.set_xlim()
 
 fig.tight_layout()
 plt.savefig('{}_cholspec_similar.png'.format(spec_dir), dpi = 300, bbox_inches = 'tight', facecolor='white')
