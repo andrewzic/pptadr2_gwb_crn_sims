@@ -21,5 +21,5 @@ with open(noiseval_fname, 'r') as noise_f:
             alpha, p0, dt = row
             out_fname = "cholspec_inp_files/{}_input.model".format(psr.strip())
             with open(out_fname, 'w') as out_f:
-                out_f.write(template_str.format(alpha, p0))
+                out_f.write(template_str.format(-1.0*alpha, p0)) #negating alpha because it should be negative in dat file
                 out_f.close()
