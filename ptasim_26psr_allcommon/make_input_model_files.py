@@ -1,3 +1,4 @@
+import shutil
 import numpy as np
 import sys
 
@@ -23,3 +24,11 @@ with open(noiseval_fname, 'r') as noise_f:
             with open(out_fname, 'w') as out_f:
                 out_f.write(template_str.format(-1.0*alpha, p0)) #negating alpha because it should be negative in dat file
                 out_f.close()
+
+            #if we specify where output model files should go
+            if len(sys.argv) > 2:
+                out_dirs = sorted(glob.glob(sys.argv[2]))
+                for out_dir in out_dirs:
+                    shutil.copyfile(out_f, out_dir)
+                
+                
