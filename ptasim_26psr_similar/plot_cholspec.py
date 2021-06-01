@@ -14,7 +14,7 @@ spec_files = sorted(glob.glob(spec_globstr))
 
 spec_dir = os.path.dirname(spec_files[0]) + '/'
 
-fig, (ax1) = plt.subplots(1,1)#,figsize=(10,7))#, xscale = 'log', yscale = 'log')
+fig, (ax1) = plt.subplots(1,1, figsize = (5,6))# ,figsize=(10,7))#, xscale = 'log', yscale = 'log')
 
 plt.sca(ax1)
 
@@ -32,7 +32,7 @@ ax1.set_yscale('log')
 ax1.set_xlabel(r'Frequency (day$^{{-1}}$)')
 ax1.set_ylabel('PSD')
 
-#ax1.set_xlim()
+ax1.set_xlim(None,1E-2)
 
 fig.tight_layout()
 plt.savefig('{}_cholspec_similar.png'.format(spec_dir), dpi = 300, bbox_inches = 'tight', facecolor='white')

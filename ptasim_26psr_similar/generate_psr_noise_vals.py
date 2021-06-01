@@ -22,7 +22,7 @@ for psr, alpha, p0 in zip(psr_list, alphas, p0s):
 for psr, toaerr in zip(psr_list, toaerrs):
     print(fmt_str_obs.format(psr, toaerr))
 
-with open('psr_noise_vals.dat', 'w') as psr_datf:
+with open('psr_noise_vals/psr_noise_vals.dat', 'w') as psr_datf:
     for alpha, p0, toaerr in zip(alphas, p0s, toaerrs):
         psr_datf.write(fmt_str_dat.format(alpha, p0, toaerr))
 

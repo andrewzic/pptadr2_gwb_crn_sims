@@ -8,7 +8,7 @@ N_psr = len(psr_list)
 
 np.random.seed(seed = 20210524)
 
-ptasim_inp_template_fn = 'ptasim_all_similar_26_N_template.inp'
+ptasim_inp_template_fn = 'ptasim_input_files/ptasim_all_similar_26_N_template.inp'
 ptasim_inp_template_f = open(ptasim_inp_template_fn, 'r')
 ptasim_inp_template_str = ptasim_inp_template_f.read()
 
@@ -42,12 +42,12 @@ for ind, alpha_upper, alpha_lower, p0_upper, p0_lower in zip(N, alpha_uppers, al
         #print(fmt_str_obs.format(psr, toaerr))
 
     
-    if not os.path.exists('ptasim_all_similar_26_{}.inp'.format(ind)):
-        with open('ptasim_all_similar_26_{}.inp'.format(ind), 'w') as ptasim_inp_f:
+    if not os.path.exists('ptasim_input_files/ptasim_all_similar_26_{}.inp'.format(ind)):
+        with open('ptasim_input_files/ptasim_all_similar_26_{}.inp'.format(ind), 'w') as ptasim_inp_f:
             ptasim_inp_f.write(ptasim_inp_template_str.format(ind, str_tnoise, str_obs))
             ptasim_inp_f.close()
         
-        with open('psr_noise_vals_{}.dat'.format(ind), 'w') as psr_datf:
+        with open('psr_noise_vals/psr_noise_vals_{}.dat'.format(ind), 'w') as psr_datf:
             for alpha, p0, toaerr in zip(alphas, p0s, toaerrs):
                 psr_datf.write(fmt_str_dat.format(alpha, p0, toaerr))
 
