@@ -1,5 +1,5 @@
 <define>
-name: all_similar_regsamp_2
+name: all_similar_regsamp_10
 nproc: 10
 nreal: 10
 </define>
@@ -34,32 +34,32 @@ psr: name=J2241-5236
 </pulsars>
 
 <add>
-tnoise: psr=J0437-4715,alpha=-5.5,p0=1.1e-22,fc=0.01
-tnoise: psr=J0613-0200,alpha=-4.8,p0=8.3e-23,fc=0.01
-tnoise: psr=J0711-6830,alpha=-5.2,p0=1.1e-22,fc=0.01
-tnoise: psr=J1017-7156,alpha=-4.3,p0=5.6e-25,fc=0.01
-tnoise: psr=J1022+1001,alpha=-4.3,p0=5.5e-24,fc=0.01
-tnoise: psr=J1024-0719,alpha=-2.3,p0=2.3e-25,fc=0.01
-tnoise: psr=J1045-4509,alpha=-5.0,p0=2.1e-25,fc=0.01
-tnoise: psr=J1125-6014,alpha=-2.8,p0=2.5e-25,fc=0.01
-tnoise: psr=J1446-4701,alpha=-4.2,p0=6.5e-25,fc=0.01
-tnoise: psr=J1545-4550,alpha=-3.6,p0=1.6e-22,fc=0.01
-tnoise: psr=J1600-3053,alpha=-3.9,p0=3.0e-25,fc=0.01
-tnoise: psr=J1603-7202,alpha=-2.2,p0=9.4e-24,fc=0.01
-tnoise: psr=J1643-1224,alpha=-2.4,p0=1.2e-23,fc=0.01
-tnoise: psr=J1713+0747,alpha=-3.0,p0=1.2e-24,fc=0.01
-tnoise: psr=J1730-2304,alpha=-2.6,p0=6.3e-23,fc=0.01
-tnoise: psr=J1732-5049,alpha=-5.3,p0=1.5e-23,fc=0.01
-tnoise: psr=J1744-1134,alpha=-5.4,p0=1.2e-25,fc=0.01
-tnoise: psr=J1824-2452A,alpha=-3.3,p0=1.5e-24,fc=0.01
-tnoise: psr=J1832-0836,alpha=-2.1,p0=2.0e-23,fc=0.01
-tnoise: psr=J1857+0943,alpha=-5.1,p0=1.5e-24,fc=0.01
-tnoise: psr=J1909-3744,alpha=-4.6,p0=1.3e-25,fc=0.01
-tnoise: psr=J1939+2134,alpha=-4.4,p0=5.4e-24,fc=0.01
-tnoise: psr=J2124-3358,alpha=-2.4,p0=1.9e-25,fc=0.01
-tnoise: psr=J2129-5721,alpha=-4.9,p0=3.3e-23,fc=0.01
-tnoise: psr=J2145-0750,alpha=-3.7,p0=6.8e-23,fc=0.01
-tnoise: psr=J2241-5236,alpha=-2.5,p0=6.3e-24,fc=0.01
+tnoise: psr=J0437-4715,alpha=-4.9,p0=4.3e-23,fc=0.01
+tnoise: psr=J0613-0200,alpha=-4.5,p0=3.5e-23,fc=0.01
+tnoise: psr=J0711-6830,alpha=-4.7,p0=4.3e-23,fc=0.01
+tnoise: psr=J1017-7156,alpha=-4.2,p0=1.8e-24,fc=0.01
+tnoise: psr=J1022+1001,alpha=-4.2,p0=7.0e-24,fc=0.01
+tnoise: psr=J1024-0719,alpha=-3.0,p0=1.1e-24,fc=0.01
+tnoise: psr=J1045-4509,alpha=-4.6,p0=9.8e-25,fc=0.01
+tnoise: psr=J1125-6014,alpha=-3.3,p0=1.1e-24,fc=0.01
+tnoise: psr=J1446-4701,alpha=-4.1,p0=1.9e-24,fc=0.01
+tnoise: psr=J1545-4550,alpha=-3.7,p0=5.3e-23,fc=0.01
+tnoise: psr=J1600-3053,alpha=-3.9,p0=1.2e-24,fc=0.01
+tnoise: psr=J1603-7202,alpha=-2.9,p0=9.6e-24,fc=0.01
+tnoise: psr=J1643-1224,alpha=-3.0,p0=1.1e-23,fc=0.01
+tnoise: psr=J1713+0747,alpha=-3.4,p0=2.8e-24,fc=0.01
+tnoise: psr=J1730-2304,alpha=-3.2,p0=3.0e-23,fc=0.01
+tnoise: psr=J1732-5049,alpha=-4.8,p0=1.3e-23,fc=0.01
+tnoise: psr=J1744-1134,alpha=-4.9,p0=6.9e-25,fc=0.01
+tnoise: psr=J1824-2452A,alpha=-3.6,p0=3.3e-24,fc=0.01
+tnoise: psr=J1832-0836,alpha=-2.8,p0=1.5e-23,fc=0.01
+tnoise: psr=J1857+0943,alpha=-4.7,p0=3.2e-24,fc=0.01
+tnoise: psr=J1909-3744,alpha=-4.3,p0=7.4e-25,fc=0.01
+tnoise: psr=J1939+2134,alpha=-4.2,p0=6.9e-24,fc=0.01
+tnoise: psr=J2124-3358,alpha=-3.0,p0=9.1e-25,fc=0.01
+tnoise: psr=J2129-5721,alpha=-4.5,p0=2.1e-23,fc=0.01
+tnoise: psr=J2145-0750,alpha=-3.8,p0=3.2e-23,fc=0.01
+tnoise: psr=J2241-5236,alpha=-3.1,p0=7.6e-24,fc=0.01
 
 </add>
 
