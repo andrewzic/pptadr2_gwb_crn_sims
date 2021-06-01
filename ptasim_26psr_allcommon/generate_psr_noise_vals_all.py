@@ -37,6 +37,8 @@ fmt_str_obs = "observe: psr={:s},toaerr={:.1e},freq=1400\n"
 fmt_str_dat = "{:.4f}\t{:.4e}\t{:.4e}\n"
     
 str_tnoise = ''
+
+for p0_low, toaerrs_low in zip(p0_lows, toaerrs_lows):
 for psr in psr_list:
     if psr in low_list:
         str_tnoise += fmt_str_tnoise.format(psr, alpha_low, p0_low)
