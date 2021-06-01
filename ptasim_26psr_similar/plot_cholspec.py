@@ -18,22 +18,27 @@ fig, (ax1) = plt.subplots(1,1, figsize = (5,6))# ,figsize=(10,7))#, xscale = 'lo
 
 plt.sca(ax1)
 
+spec_ch0s = [] #list for lowest frequency channel - storing for help setting ylims
+
 for specf in spec_files:
     print(specf)
     spec = np.loadtxt(specf)
     freq = spec[:, 0]
     psd = spec[:, 1]
-    plt.plot(freq, psd, label = os.path.splitext(os.path.basename(specf))[0])
+    spec_ch0s.append(psd[0])
+    plt.plot(freq, psd, label = os.path.splitext(os.path.basename(specf))[0], color = '#9E9E9E', linewidth = 0.5, alpha = 0.5)
 
 #ax1.legend()
+
+max_spec_ch0 = np.amax(spec_ch0s)
 
 ax1.set_xscale('log')
 ax1.set_yscale('log')
 ax1.set_xlabel(r'Frequency (day$^{{-1}}$)')
 ax1.set_ylabel('PSD')
-
-ax1.set_xlim(None,1E-2)
+ax1.set_ylim(10**(int(np.log10(ax1.get_ylim()[0]))), 10**(int(np.log10(max_spec_ch0))))
+ax1.set_xlim(10**(int(np.log10(ax1.get_xlim()[0]))),1E-2)
 
 fig.tight_layout()
 plt.savefig('{}_cholspec_similar.png'.format(spec_dir), dpi = 300, bbox_inches = 'tight', facecolor='white')
-plt.show()
+#plt.show()
