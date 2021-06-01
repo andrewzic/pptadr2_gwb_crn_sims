@@ -1,3 +1,4 @@
+import os
 import shutil
 import numpy as np
 import sys
@@ -30,6 +31,7 @@ with open(noiseval_fname, 'r') as noise_f:
             if len(sys.argv) > 2:
                 out_dirs = sorted(glob.glob(sys.argv[2]))
                 for out_dir in out_dirs:
-                    shutil.copyfile(out_f, out_dir)
+                    copy_fname = '{}/{}'.format(out_dir, os.path.basename(out_fname))
+                    shutil.copyfile(out_fname, copy_fname)
                 
                 
