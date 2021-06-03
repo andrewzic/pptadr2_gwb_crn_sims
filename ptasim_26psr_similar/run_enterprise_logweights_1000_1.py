@@ -43,7 +43,7 @@ if params.sampler == 'ptmcmcsampler':
   #   x0 = np.hstack(p.sample() for p in pta[0].params)
   #   sampler.sample(x0, params.nsamp, **params.sampler_kwargs)
   # else:
-    super_model = hypermodel.HyperModel(pta, log_weights = {0: 10, 1: 1})
+    super_model = hypermodel.HyperModel(pta, log_weights = {0: 100, 1: 1})
     print('Super model parameters: ', super_model.params)
     sampler = super_model.setup_sampler(resume=False, outdir=params.output_dir)
     N = params.nsamp
