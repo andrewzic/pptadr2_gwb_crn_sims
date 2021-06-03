@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=ppta_ptasim_26psr_similar_mc_spin_v_spincommon_logweights_1000_1
 #SBATCH --output=/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/slurm_logs/ppta_ptasim_26psr_similar_mc_spin_v_spincommon_logweights_1000_1_20210524_%A_%a.log
-#SBATCH --ntasks=4
+#SBATCH --ntasks=8
 #SBATCH --time=0-12:00:00
 #SBATCH --mem-per-cpu=7G
 #SBATCH --tmp=8G
