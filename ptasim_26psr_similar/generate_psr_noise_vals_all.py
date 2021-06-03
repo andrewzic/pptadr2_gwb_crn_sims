@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import ptasim2enterprise as p2e
 
 psr_list = np.loadtxt('psrs.dat', dtype = 'str')
 
@@ -26,6 +27,12 @@ for ind, alpha_upper, alpha_lower, p0_upper, p0_lower in zip(N, alpha_uppers, al
     alphas = np.random.uniform(alpha_lower, alpha_upper, size = N_psr)
     p0s = 10**(np.random.uniform(p0_lower, p0_upper, size = N_psr))
     toaerrs = np.random.uniform(9e-8, 5e-7, size = N_psr)
+    log10As = p2e.P02A(p0s, 0.01, -alphas)
+    log10A_lower = p2e.P02A(10**p0_lower, 0.01, -1.0*np.array([alpha_lower, alpha_upper]))
+    log10A_upper = p2e.P02A(10**p0_upper, 0.01, -1.0*np.array([alpha_lower, alpha_upper]))
+    print(log10A_lower)
+    print(log10A_upper)
+    print(log10As)
 
     fmt_str_tnoise = "tnoise: psr={:s},alpha={:.1f},p0={:.1e},fc=0.01\n"
     fmt_str_obs = "observe: psr={:s},toaerr={:.1e},freq=1400\n"
