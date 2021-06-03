@@ -1,7 +1,7 @@
 paramfile_label: 20210524_logweights_1000_1_2
 datadir: /flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/all_similar_regsamp_1/output/real_2/
 out: /flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/enterprise_out/all_mc_array_spin_v_spincommon_20210524/
-overwrite: False
+overwrite: True
 array_analysis: True
 ssephem: DE421
 sampler: ptmcmcsampler
