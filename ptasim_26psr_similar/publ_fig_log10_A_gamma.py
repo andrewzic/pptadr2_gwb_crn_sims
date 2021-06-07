@@ -1,4 +1,5 @@
 import numpy as np
+import os
 #import matplotlib
 #matplotlib.use('Tkagg')
 from matplotlib import pyplot as plt
