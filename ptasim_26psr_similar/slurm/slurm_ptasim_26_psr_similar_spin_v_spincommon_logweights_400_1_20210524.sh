@@ -25,3 +25,4 @@ echo $SLURM_ARRAY_TASK_ID
 
 echo "/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/params/params_all_mc_array_spin_v_spincommon_logweights_400_1_20210524_r${SLURM_ARRAY_TASK_ID}.dat"
 singularity exec /home/zic006/psr_gwb.sif python3 /flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/run_enterprise_logweights_400_1.py --prfile "/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/params/params_all_mc_array_spin_v_spincommon_logweights_400_1_20210524_r${SLURM_ARRAY_TASK_ID}.dat"
+singularity exec /home/zic006/psr_gwb.sif python3 -m enterprise_warp.results  --result "/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/params/params_all_mc_array_spin_v_spincommon_logweights_400_1_20210524_r${SLURM_ARRAY_TASK_ID}.dat" -b 1 -c 2 -f 1 -l 1 -c 2 -a 1 -m 1 

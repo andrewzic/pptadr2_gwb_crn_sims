@@ -11,9 +11,31 @@ from ptasim2enterprise import P02A
 import json
 # What results to grab
 #psrs_set = '/home/bgonchar/correlated_noise_pta_2020/params/pulsar_set_x_1.dat'
-psrs_set = '/DATA/CETUS_3/zic006/ssb/ptasim/ptasim_26psr_similar/psrs.dat'
-output_directory = './' #plot output location
-result = ['/DATA/CETUS_3/zic006/ssb/ptasim/ptasim_26psr_similar/params/params_all_mc_array_spin_v_spincommon_20210524_r0.dat']
+
+opts = parse_commandline()
+
+def interpret_opts_result(opts):
+    """ Determine output directory from the --results argument
+    from enterprise_warp.results script"""
+    if os.path.isdir(opts.result):
+      outdir_all = opts.result
+    elif os.path.isfile(opts.result):
+      params = enterprise_warp.Params(opts.result, init_pulsars=False)
+      outdir_all = params.out + params.label_models + '_' + \
+                        params.paramfile_label + '/'
+
+      return outdir_all
+    else:
+      raise ValueError('--result seems to be neither a file, not a directory')
+
+
+
+result = opts.result
+output_directory = interpret_opts_result(opts)
+
+
+psrs_set = '/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/psrs.dat'
+#result = ['/DATA/CETUS_3/zic006/ssb/ptasim/ptasim_26psr_similar/params/params_all_mc_array_spin_v_spincommon_20210524_r0.dat']
 par = [
   ['gw'],
 ]
@@ -115,7 +137,7 @@ axes[2].clear()
 
 
 
-psr_noise_dict = json.load(open('./noisefiles/_noise.json', 'r'))
+psr_noise_dict = json.load(open('{}/noisefiles/_noise.json'.format(output_directory), 'r'))
 
 rednoise_log10_As = []
 rednoise_gammas = []
