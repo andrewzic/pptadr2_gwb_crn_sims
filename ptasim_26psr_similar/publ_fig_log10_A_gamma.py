@@ -5,7 +5,7 @@ import os
 from matplotlib import pyplot as plt
 from matplotlib import rc
 from chainconsumer import ChainConsumer
-
+from enterprise_warp import enterprise_warp
 from enterprise_warp.results import parse_commandline
 from enterprise_warp.results import EnterpriseWarpResult
 from ptasim2enterprise import P02A
@@ -13,8 +13,8 @@ import json
 # What results to grab
 #psrs_set = '/home/bgonchar/correlated_noise_pta_2020/params/pulsar_set_x_1.dat'
 
-opts = parse_commandline()
-
+#opts = parse_commandline()
+#print(opts)
 def interpret_opts_result(opts):
     """ Determine output directory from the --results argument
     from enterprise_warp.results script"""
@@ -28,11 +28,6 @@ def interpret_opts_result(opts):
       return outdir_all
     else:
       raise ValueError('--result seems to be neither a file, not a directory')
-
-
-
-result = opts.result
-output_directory = interpret_opts_result(opts)
 
 
 psrs_set = '/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/psrs.dat'
@@ -70,14 +65,28 @@ opts.__dict__['logbf'] = True
 
 fig, axes = plt.subplots()
 cc = ChainConsumer()
-for rr, pp, nm, ll in zip(result, par, nmodel, labels):
-  opts.__dict__['result'] = rr
-  opts.__dict__['par'] = pp
+
+
+print(result)
+#output_directory = interpret_opts_result(opts)
+
+#for rr, pp, nm, ll in zip(result, par, nmodel, labels):
+  #opts.__dict__['result'] = rr
+  #opts.__dict__['par'] = pp
   #opts.__dict__['load_separated'] = 0
-  print(opts.__dict__)
-  result_obj = EnterpriseWarpResult(opts)
-  result_obj.main_pipeline()
-  if result_obj.counts is not None:
+#  print(opts.__dict__)
+
+
+if opts.par is None:
+    opts.__dict__['par'] = 'gw'
+
+result_obj = EnterpriseWarpResult(opts)
+output_directory = result_obj.outdir_all
+result_obj.main_pipeline()
+
+nm = 1 #nmodel; CHANGE IF YOU WANT MODEL 0
+
+if result_obj.counts is not None:
     print('HERE1')
     model_mask = np.round(result_obj.chain_burn[:,result_obj.ind_model]) == nm
     
@@ -106,7 +115,7 @@ cc.configure(summary=False, linestyles='-', linewidths=1.0,
 #plt.ylabel('$\log_{{10}} A_{{\mathrm{{CP,m}}}}$')
 #plt.xlabel('$\gamma_{{\mathrm{{CP,m}}}}$')
 
-input_noise_pars = np.loadtxt('psr_noise_vals.dat')
+input_noise_pars = np.loadtxt('/flush5/zic006/pptadr2_gwb_crn_sims/ptasim_26psr_similar/psr_noise_vals/psr_noise_vals_1.dat')
 input_gamms = input_noise_pars[:, 0]
 input_as = input_noise_pars[:, 1]
 input_wns = input_noise_pars[:, 2]
