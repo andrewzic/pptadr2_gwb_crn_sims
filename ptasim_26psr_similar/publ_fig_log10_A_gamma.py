@@ -56,18 +56,18 @@ linewidths = [
 colors = [
 "#1976D2",
 ]
-extents=[[2.5, 5.3], [-16, -12]]
+extents=[[2.8, 5.2], [-15.35, -13.15]]
 
 opts = parse_commandline()
 opts.__dict__['logbf'] = True
 
 #plt.style.use('seaborn-white')
 
-fig, axes = plt.subplots()
+fig, axes = plt.subplots(figsize = (3.31, 3.11))
 cc = ChainConsumer()
 
 
-print(result)
+#print(result)
 #output_directory = interpret_opts_result(opts)
 
 #for rr, pp, nm, ll in zip(result, par, nmodel, labels):
@@ -79,6 +79,8 @@ print(result)
 
 if opts.par is None:
     opts.__dict__['par'] = 'gw'
+
+print(opts.par)
 
 result_obj = EnterpriseWarpResult(opts)
 output_directory = result_obj.outdir_all
@@ -94,10 +96,10 @@ if result_obj.counts is not None:
     #values = values[10000:, :-4]
     values = values[:,result_obj.par_mask]
     print(values.shape)
-  else:
+else:
     values = result_obj.chain_burn[:,result_obj.par_mask]
     print(values.shape)
-  cc.add_chain(values, parameters=["$\gamma_{{\mathrm{{CP}}}}$", "$\log_{{10}} A_{{\mathrm{{CP}}}}$"])
+cc.add_chain(values, parameters=["$\gamma_{{\mathrm{{CP}}}}$", "$\log_{{10}} A_{{\mathrm{{CP}}}}$"])
 
 cc.configure(summary=False, linestyles='-', linewidths=1.0,
              shade=True, bar_shade=True, shade_alpha=0.5, serif=True,
@@ -169,8 +171,8 @@ axes[2].plot(-input_gamms, input_log10As, color = 'C1', marker = 'X', zorder = 1
 
 axes[2].set_xlabel("$\gamma_{{\mathrm{{CP}}}}$", fontsize = 12)
 axes[2].set_ylabel("$\log_{{10}} A_{{\mathrm{{CP}}}}$", fontsize = 12)
-axes[2].set_xlim(3, 5)#np.min(gw_gamma) - 1.1, np.max(gw_gamma) + 1.1)
-axes[2].set_ylim(np.min(input_log10As) - .8, np.max(input_log10As) + .8)
+axes[2].set_xlim(2.8, 5.2)#np.min(gw_gamma) - 1.1, np.max(gw_gamma) + 1.1)
+axes[2].set_ylim(-15.35, -13.15)
 #print(axes)
 
 
@@ -183,8 +185,11 @@ for input_logA in input_log10As:
   axes[3].axhline(input_logA, c = 'C1', alpha = 0.4, ls = '--')
 
 plt.rcParams['figure.constrained_layout.use'] = True
-axes[2].set_xlim(3, 5)#np.min(gw_gamma) - 1.1, np.max(gw_gamma) + 1.1)
-axes[2].set_ylim(np.min(input_log10As) - .8, np.max(input_log10As) + .8)
+#axes[2].set_xlim(3, 5)#np.min(gw_gamma) - 1.1, np.max(gw_gamma) + 1.1)
+#axes[2].set_ylim(-15.25, -14.25)
+print('old ylims', 1.05*np.min(input_log10As), 1.05*np.max(input_log10As))
+#axes[2].set_ylim(1.05*np.min(input_log10As), 1.05*np.max(input_log10As))
+#axes[2].set_ylim(np.min(input_log10As) - .8, np.max(input_log10As) + .8)
 
 
 #plt.ylabel('Posterior probability')
@@ -195,6 +200,8 @@ axes[2].set_ylim(np.min(input_log10As) - .8, np.max(input_log10As) + .8)
 #plt.grid(b=None)
 #plt.tight_layout()
 #fig.tight_layout()
+#extents = 
+cfig = cc.plotter.plot(extents=extents, filename=output_directory+'log10_A_gamma.pdf')
 fig.savefig(output_directory + 'log10_A_gamma2.png', bbox_inches = 'tight', dpi = 300)
 fig.savefig(output_directory + 'log10_A_gamma2.pdf', bbox_inches = 'tight')
 #plt.show()
