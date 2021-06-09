@@ -66,7 +66,7 @@ for specf, nf in zip(spec_files, nofit_inds):
         linestyle = '-'
         label = None #os.path.splitext(os.path.basename(specf))[0]
     else:
-        linewidth = 0.9
+        linewidth = 0.5
         linestyle = '-'
         color =  '#9E9E9E'#'C{}'.format(i)
         label = None#os.path.splitext(os.path.basename(specf))[0] #None

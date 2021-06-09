@@ -202,6 +202,8 @@ print('old ylims', 1.05*np.min(input_log10As), 1.05*np.max(input_log10As))
 #fig.tight_layout()
 #extents = 
 cfig = cc.plotter.plot(extents=extents, filename=output_directory+'log10_A_gamma.pdf')
+fig = plt.gcf()
+fig.set_size_inches(3.31, 3.11)
 fig.savefig(output_directory + 'log10_A_gamma2.png', bbox_inches = 'tight', dpi = 300)
 fig.savefig(output_directory + 'log10_A_gamma2.pdf', bbox_inches = 'tight')
 #plt.show()
