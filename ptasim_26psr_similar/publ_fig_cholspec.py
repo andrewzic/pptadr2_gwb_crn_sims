@@ -103,7 +103,7 @@ avg_inp_psd = np.average(inp_psds, weights = 1.0/input_wns**1.0, axis = 0)#*((1.
 avg_inp_psd_nofit = np.average(np.array(inp_psds)[nofit_inds], weights = 1.0/np.array(input_wns)[nofit_inds], axis = 0)
                                         
 ax1.plot(freq_ptasim, avg_inp_psd, linestyle = '-', color = '#1976D2', linewidth = 2.0, alpha = 1.0)#, label = '$\overline{{P}}(f | A, \gamma ) + \overline{{\sigma}}$')
-ax1.plot(freq_ptasim, avg_inp_psd_nofit, linestyle = '--', color = '#1976D2', linewidth = 2.0, alpha = 0.5)#, label = '$\overline{{P}}(f | A, \gamma ) + \overline{{\sigma}}$'
+#ax1.plot(freq_ptasim, avg_inp_psd_nofit, linestyle = '--', color = '#1976D2', linewidth = 2.0, alpha = 0.5)#, label = '$\overline{{P}}(f | A, \gamma ) + \overline{{\sigma}}$'
 
 max_spec_ch0 = np.amax(spec_ch0s)
 min_spec_ch0 = np.amin(spec_ch0s)
